@@ -69,8 +69,8 @@ a{
 ========================= */
 
 .logo img{
-    width: 210em;
-    height: 100em;
+    width: 210px;
+    height: 100px;
     object-fit: contain;
 }
 
@@ -145,12 +145,12 @@ button{
     display: inline-block;
     background-color: crimson;
     color: white;
-    padding: 12em 25em;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5em;
+    border-radius: 5px;
     cursor: pointer;
     transition: 0.3s ease;
-    font-size: 16em;
+    font-size: 16px;
     font-weight: bold;
 }
 
