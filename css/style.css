@@ -104,7 +104,7 @@ a{
    HERO SECTION
 ========================= */
 
-.hero{
+.info{
     background: linear-gradient(
     rgba(0,0,0,0.7),
     rgba(0,0,0,0.7));
@@ -114,23 +114,23 @@ a{
     padding: 100px 20px;
 }
 
-.hero-content{
+.info-content{
     max-width: 800px;
     margin: auto;
 }
 
-.hero h1{
+.info h1{
     font-size: 3rem;
     margin-bottom: 20px;
 }
 
-.hero h2{
+.info h2{
     font-size: 2rem;
     margin-bottom: 20px;
     color: crimson;
 }
 
-.hero p{
+.info p{
     font-size: 1.1rem;
     margin-bottom: 30px;
 }
