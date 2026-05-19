@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Arawaza | Contact Us</title>
+    <title>Arawaza | Feedback</title>
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -55,13 +55,13 @@
                 </li>
 
                 <li>
-                    <a href="contact.html" class="active">
+                    <a href="contact.html">
                         Contact Us
                     </a>
                 </li>
 
                 <li>
-                    <a href="feedback.html">
+                    <a href="feedback.html" class="active">
                         Feedback
                     </a>
                 </li>
@@ -78,52 +78,23 @@
         <!-- PAGE TITLE -->
         <section class="page-title">
 
-            <h1>Contact Us</h1>
+            <h1>Customer Feedback</h1>
 
             <p>
-                We would love to hear from you.
-                Reach out to us for product inquiries,
-                support, or general information.
+                Your feedback helps us improve our products
+                and services. We value your opinions
+                and suggestions.
             </p>
 
         </section>
 
-        <!-- CONTACT SECTION -->
-        <section class="contact-section">
+        <!-- FEEDBACK SECTION -->
+        <section class="feedback-section">
 
-            <!-- CONTACT INFORMATION -->
-            <article class="contact-info">
+            <!-- FEEDBACK FORM -->
+            <article class="feedback-form-container">
 
-                <h2>Get In Touch</h2>
-
-                <p>
-                    At Arawaza, we are always ready to assist
-                    martial artists, trainers, and customers
-                    with any questions about our products
-                    and services.
-                </p>
-
-                <p>
-                    <strong>Email:</strong>
-                    arawaza@gmail.com
-                </p>
-
-                <p>
-                    <strong>Phone:</strong>
-                    +267 77031617
-                </p>
-
-                <p>
-                    <strong>Location:</strong>
-                    Gaborone, Botswana
-                </p>
-
-            </article>
-
-            <!-- CONTACT FORM -->
-            <article class="contact-form">
-
-                <h2>Send Us A Message</h2>
+                <h2>Send Us Your Feedback</h2>
 
                 <form action="#" method="post">
 
@@ -157,41 +128,87 @@
 
                     </section>
 
-                    <!-- SUBJECT -->
+                    <!-- RATING -->
                     <section class="form-group">
 
-                        <label for="subject">
-                            Subject
+                        <label for="rating">
+                            Rate Our Website
                         </label>
 
-                        <input type="text"
-                        id="subject"
-                        name="subject"
-                        placeholder="Enter subject">
+                        <select id="rating"
+                        name="rating"
+                        required>
+
+                            <option value="">
+                                Select Rating
+                            </option>
+
+                            <option value="excellent">
+                                Excellent
+                            </option>
+
+                            <option value="good">
+                                Good
+                            </option>
+
+                            <option value="average">
+                                Average
+                            </option>
+
+                            <option value="poor">
+                                Poor
+                            </option>
+
+                        </select>
 
                     </section>
 
-                    <!-- MESSAGE -->
+                    <!-- COMMENTS -->
                     <section class="form-group">
 
-                        <label for="message">
-                            Message
+                        <label for="comments">
+                            Comments
                         </label>
 
-                        <textarea id="message"
-                        name="message"
+                        <textarea id="comments"
+                        name="comments"
                         rows="6"
-                        placeholder="Write your message here..."
+                        placeholder="Write your comments here..."
                         required></textarea>
 
                     </section>
 
-                    <!-- BUTTON -->
-                    <button type="submit">
+                    <!-- SUGGESTIONS -->
+                    <section class="form-group">
 
-                        Send Message
+                        <label for="suggestions">
+                            Suggestions
+                        </label>
 
-                    </button>
+                        <textarea id="suggestions"
+                        name="suggestions"
+                        rows="6"
+                        placeholder="Write your suggestions here..."></textarea>
+
+                    </section>
+
+                    <!-- BUTTONS -->
+                    <section class="button-group">
+
+                        <button type="submit">
+
+                            Submit Feedback
+
+                        </button>
+
+                        <button type="reset"
+                        class="clear-btn">
+
+                            Clear Form
+
+                        </button>
+
+                    </section>
 
                 </form>
 
@@ -204,23 +221,24 @@
     <!-- ASIDE -->
     <aside class="quick-links">
 
-        <h3>Business Hours</h3>
+        <h3>Why Feedback Matters</h3>
 
         <ul>
 
             <li>
-                Monday - Friday:
-                8:00 AM - 5:00 PM
+                Helps improve website experience
             </li>
 
             <li>
-                Saturday:
-                9:00 AM - 1:00 PM
+                Supports better customer service
             </li>
 
             <li>
-                Sunday:
-                Closed
+                Encourages product improvement
+            </li>
+
+            <li>
+                Strengthens communication with users
             </li>
 
         </ul>
@@ -252,14 +270,20 @@
                     </li>
 
                     <li>
-                        <a href="about.html">
+                        <a href="about us.html">
                             About Us
                         </a>
                     </li>
 
                     <li>
-                        <a href="contact.html">
+                        <a href="contact us.html">
                             Contact Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="feedback.html">
+                            Feedback
                         </a>
                     </li>
 
