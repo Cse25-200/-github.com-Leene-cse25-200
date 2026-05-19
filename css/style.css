@@ -17,6 +17,7 @@ body{
     background: linear-gradient(to right, #000000, #322dbb);
     color: white;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* =========================
@@ -28,67 +29,12 @@ img{
     display: block;
 }
 
-
-
 /* =========================
    HEADER
 ========================= */
 
 .header{
-    text-align: center;
-    padding-top: 10px;
-}
-
-/* LOGO */
-
-.logo img{
-    width: 220px;
-    max-width: 100%;
-}
-
-/* NAVBAR */
-
-.navbar{
-    margin-top: 10px;
-}
-
-/* NAV LINKS */
-
-.nav-links{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* LINKS */
-
-.nav-links a{
-    color: white;
-    text-decoration: none;
-
-    font-size: 1.3rem;
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-/* HOVER EFFECT */
-
-.nav-links a:hover{
-    color: #00bfff;
-}
-
-/* BULLETS */
-
-.nav-links li::before{
-    content: "•";
-    color: white;
-    margin-right: 12px;
+    padding: 15px 40px;
 }
 
 /* =========================
@@ -99,15 +45,23 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     flex-wrap: wrap;
 }
 
 /* =========================
-   LOGO
+   LOGO CENTER
 ========================= */
 
+.logo{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .logo img{
-    width: 180px;
+    width: 260px;
+    max-width: 100%;
 }
 
 /* =========================
@@ -116,14 +70,27 @@ img{
 
 .nav-links{
     display: flex;
-    list-style: none;
+    align-items: center;
     gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
+/* BULLETS */
+
+.nav-links li::before{
+    content: "•";
+    color: white;
+    margin-right: 12px;
+}
+
+/* LINKS */
 
 .nav-links a{
     text-decoration: none;
     color: white;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: bold;
     transition: 0.3s;
 }
@@ -167,11 +134,23 @@ img{
     flex-wrap: wrap;
 }
 
-.hero-image img{
-    max-width: 550px;
+/* HERO IMAGE */
+
+.hero-image{
+    flex: 1;
+    text-align: center;
 }
 
+.hero-image img{
+    max-width: 500px;
+    margin: auto;
+    background: transparent;
+}
+
+/* HERO CONTENT */
+
 .hero-content{
+    flex: 1;
     max-width: 600px;
 }
 
@@ -183,6 +162,7 @@ img{
 
 .hero-content h2{
     margin-bottom: 15px;
+    font-size: 2rem;
 }
 
 .hero-content p{
@@ -198,7 +178,7 @@ img{
 }
 
 .featured-products h2{
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 30px;
     text-transform: uppercase;
 }
@@ -210,7 +190,7 @@ img{
 .products-grid,
 .product-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
 }
 
@@ -532,100 +512,57 @@ aside a:hover{
    RESPONSIVE DESIGN
 ========================= */
 
-@media (max-width: 768px){
-
-    .navbar{
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .nav-links{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero,
-    .about-section,
-    .contact-section{
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .page-title h1,
-    .hero-content h1{
-        font-size: 2rem;
-    }
-
-    .featured-products,
-    .products-section,
-    .mission-section{
-        padding: 20px;
-    }
-
-    .feedback-form-container{
-        padding: 25px;
-    }
-
-    .button-group{
-        flex-direction: column;
-    }
-
-    .footer-container{
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .social-icons{
-        justify-content: center;
-    }
-}
-
-/* =========================
-   MOBILE RESPONSIVE FIX
-========================= */
-
 @media screen and (max-width: 768px){
 
-    /* BODY */
-    body{
-        overflow-x: hidden;
-    }
-
     /* HEADER */
+
     .header{
-        padding: 10px;
-        text-align: center;
+        padding: 10px 20px;
     }
 
     /* NAVBAR */
+
     .navbar{
         flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 
-    .nav-links{
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 15px;
-        text-align: center;
-    }
-
-    .nav-links li{
-        list-style: none;
-    }
-
     /* LOGO */
+
+    .logo{
+        position: static;
+        transform: none;
+        margin-bottom: 20px;
+    }
+
     .logo img{
-        width: 140px;
+        width: 180px;
         margin: auto;
     }
 
+    /* NAV LINKS */
+
+    .nav-links{
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .nav-links li::before{
+        display: none;
+    }
+
+    .nav-links a{
+        font-size: 1.2rem;
+    }
+
     /* HERO SECTION */
+
     .hero{
         flex-direction: column;
-        padding: 20px;
         text-align: center;
+        padding: 20px;
     }
 
     .hero-content{
@@ -633,8 +570,7 @@ aside a:hover{
     }
 
     .hero-content h1{
-        font-size: 2rem;
-        line-height: 1.2;
+        font-size: 2.2rem;
     }
 
     .hero-content h2{
@@ -646,13 +582,14 @@ aside a:hover{
     }
 
     /* HERO IMAGE */
+
     .hero-image img{
         width: 100%;
-        max-width: 300px;
-        margin: auto;
+        max-width: 320px;
     }
 
-    /* FEATURED PRODUCTS */
+    /* PRODUCTS */
+
     .featured-products{
         padding: 20px;
     }
@@ -662,7 +599,6 @@ aside a:hover{
         font-size: 2rem;
     }
 
-    /* PRODUCTS GRID */
     .products-grid,
     .product-grid{
         grid-template-columns: 1fr;
@@ -672,7 +608,8 @@ aside a:hover{
         height: auto;
     }
 
-    /* ABOUT SECTION */
+    /* ABOUT */
+
     .about-section{
         flex-direction: column;
         text-align: center;
@@ -680,33 +617,38 @@ aside a:hover{
     }
 
     .about-image img{
-        width: 100%;
         max-width: 300px;
         margin: auto;
     }
 
-    /* CONTACT SECTION */
+    /* CONTACT */
+
     .contact-section{
         flex-direction: column;
         padding: 20px;
     }
 
     /* FORMS */
+
     .contact-form,
     .feedback-form-container{
         width: 100%;
     }
 
     /* FOOTER */
+
     .footer-container{
         flex-direction: column;
         text-align: center;
-        gap: 30px;
     }
 
-    /* SOCIAL ICONS */
     .social-icons{
         justify-content: center;
     }
 
+    /* PAGE TITLES */
+
+    .page-title h1{
+        font-size: 2rem;
+    }
 }
