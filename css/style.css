@@ -1,18 +1,23 @@
+```css
 /* =========================
    GLOBAL STYLES
 ========================= */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:linear-gradient(to right,#050816,#312e81);
-    color:#ffffff;
-    line-height:1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #222;
 }
 
 /* =========================
@@ -20,52 +25,80 @@ body{
 ========================= */
 
 img{
-    max-width:100%;
-    display:block;
-    object-fit:cover;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 /* =========================
-   HEADER & NAVIGATION
+   LINKS
+========================= */
+
+a{
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* =========================
+   HEADER
 ========================= */
 
 .header{
-    background:#020617;
-    padding:20px 60px;
-    position:sticky;
-    top:0;
-    z-index:1000;
+    background-color: #111;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
+
+/* =========================
+   LOGO
+========================= */
 
 .logo img{
-    width:180px;
-    height:70px;
+    width: 180px;
+    height: 70px;
+    object-fit: contain;
 }
 
+/* =========================
+   NAV LINKS
+========================= */
+
 .nav-links{
-    display:flex;
-    list-style:none;
-    gap:25px;
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .nav-links a{
-    color:#ffffff;
-    text-decoration:none;
-    font-size:16px;
-    font-weight:bold;
-    transition:0.3s;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
 }
 
-.nav-links a:hover,
+.nav-links a:hover{
+    background-color: crimson;
+}
+
 .nav-links .active{
-    color:#60a5fa;
+    background-color: crimson;
 }
 
 /* =========================
@@ -73,39 +106,66 @@ img{
 ========================= */
 
 .hero{
-    min-height:85vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:80px 60px;
-    gap:60px;
-}
-
-.hero-image img{
-    width:600px;
-    height:450px;
-    border-radius:10px;
+    background: linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7));
+    
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
 }
 
 .hero-content{
-    max-width:600px;
+    max-width: 800px;
+    margin: auto;
 }
 
-.hero-content h1{
-    font-size:52px;
-    margin-bottom:20px;
-    text-transform:uppercase;
+.hero h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-.hero-content h2{
-    font-size:28px;
-    color:#93c5fd;
-    margin-bottom:20px;
+.hero h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: crimson;
 }
 
-.hero-content p{
-    font-size:18px;
-    color:#d1d5db;
+.hero p{
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.product-btn,
+button{
+    display: inline-block;
+    background-color: crimson;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product-btn:hover,
+button:hover{
+    background-color: #990000;
+    transform: translateY(-3px);
+}
+
+.clear-btn{
+    background-color: #555;
+}
+
+.clear-btn:hover{
+    background-color: #222;
 }
 
 /* =========================
@@ -113,19 +173,20 @@ img{
 ========================= */
 
 .page-title{
-    text-align:center;
-    padding:80px 20px 40px;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: white;
 }
 
 .page-title h1{
-    font-size:48px;
-    margin-bottom:20px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
 .page-title p{
-    max-width:700px;
-    margin:auto;
-    color:#d1d5db;
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
 }
 
 /* =========================
@@ -134,14 +195,14 @@ img{
 
 .featured-products,
 .products-section{
-    padding:80px 60px;
+    padding: 60px 5%;
 }
 
 .featured-products h2,
 .products-section h2{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:50px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
 }
 
 /* =========================
@@ -150,9 +211,10 @@ img{
 
 .product-grid,
 .products-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+    minmax(250px, 1fr));
+    gap: 30px;
 }
 
 /* =========================
@@ -160,48 +222,37 @@ img{
 ========================= */
 
 .product-card{
-    background:#111827;
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
-    transition:0.3s;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .product-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 10px 20px rgba(0,0,0,0.4);
+    transform: translateY(-10px);
 }
 
 .product-card img{
-    width:250px;
-    height:250px;
-    margin:auto;
-    border-radius:10px;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
 }
 
-.product-card h2{
-    margin:20px 0 10px;
-    font-size:22px;
+.product-card h2,
+.product-card h3{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 .price{
-    font-size:20px;
-    color:#60a5fa;
-    margin-bottom:20px;
-}
-
-.product-btn{
-    display:inline-block;
-    padding:12px 25px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:5px;
-    transition:0.3s;
-}
-
-.product-btn:hover{
-    background:#1d4ed8;
+    color: crimson;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 /* =========================
@@ -209,32 +260,33 @@ img{
 ========================= */
 
 .about-section{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:50px;
-    padding:80px 60px;
-    flex-wrap:wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 5%;
+    flex-wrap: wrap;
+    background-color: white;
 }
 
 .about-image img{
-    width:500px;
-    height:500px;
-    border-radius:10px;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
 }
 
 .about-content{
-    max-width:600px;
+    max-width: 600px;
 }
 
 .about-content h2{
-    font-size:38px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: crimson;
 }
 
 .about-content p{
-    margin-bottom:20px;
-    color:#d1d5db;
+    margin-bottom: 20px;
 }
 
 /* =========================
@@ -242,22 +294,28 @@ img{
 ========================= */
 
 .mission-section{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-    padding:60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+    minmax(250px,1fr));
+    gap: 30px;
+    padding: 60px 5%;
 }
 
 .mission-box{
-    background:#111827;
-    padding:30px;
-    border-radius:10px;
-    text-align:center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.mission-box:hover{
+    transform: translateY(-8px);
 }
 
 .mission-box h2{
-    margin-bottom:20px;
-    color:#93c5fd;
+    color: crimson;
+    margin-bottom: 20px;
 }
 
 /* =========================
@@ -265,84 +323,68 @@ img{
 ========================= */
 
 .contact-section{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    padding:80px 60px;
+    display: flex;
+    gap: 40px;
+    padding: 60px 5%;
+    flex-wrap: wrap;
 }
 
 .contact-info,
 .contact-form,
 .feedback-form-container{
-    background:#111827;
-    padding:40px;
-    border-radius:10px;
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
 }
 
 .contact-info h2,
 .contact-form h2,
 .feedback-form-container h2{
-    margin-bottom:20px;
+    margin-bottom: 20px;
+    color: crimson;
 }
 
 /* =========================
-   FORM STYLES
+   FORMS
 ========================= */
 
 .form-group{
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .form-group label{
-    display:block;
-    margin-bottom:10px;
-    font-weight:bold;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:5px;
-    background:#1f2937;
-    color:white;
-    font-size:16px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus{
-    outline:2px solid #60a5fa;
+    outline: none;
+    border-color: crimson;
 }
 
-button{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:14px 30px;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:16px;
-    transition:0.3s;
-}
-
-button:hover{
-    background:#1d4ed8;
-}
-
-.clear-btn{
-    background:#dc2626;
-}
-
-.clear-btn:hover{
-    background:#b91c1c;
-}
+/* =========================
+   BUTTON GROUP
+========================= */
 
 .button-group{
-    display:flex;
-    gap:20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 /* =========================
@@ -350,47 +392,55 @@ button:hover{
 ========================= */
 
 .company-info{
-    padding:60px;
-    text-align:center;
+    padding: 60px 5%;
+    text-align: center;
+    background-color: white;
+}
+
+.company-info article{
+    max-width: 900px;
+    margin: auto;
+}
+
+.company-info h2{
+    font-size: 2rem;
+    color: crimson;
+    margin-bottom: 20px;
 }
 
 .company-info p{
-    max-width:800px;
-    margin:20px auto;
-    color:#d1d5db;
-    font-size:18px;
+    margin-bottom: 20px;
 }
 
 /* =========================
-   QUICK LINKS / ASIDE
+   QUICK LINKS
 ========================= */
 
 .quick-links{
-    background:#0f172a;
-    padding:40px 60px;
+    background-color: #111;
+    color: white;
+    padding: 40px 5%;
 }
 
 .quick-links h3{
-    margin-bottom:20px;
-    color:#93c5fd;
+    margin-bottom: 20px;
+    color: crimson;
 }
 
 .quick-links ul{
-    list-style:none;
+    list-style: none;
 }
 
 .quick-links li{
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
 
 .quick-links a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
+    color: white;
 }
 
 .quick-links a:hover{
-    color:#60a5fa;
+    color: crimson;
 }
 
 /* =========================
@@ -398,57 +448,58 @@ button:hover{
 ========================= */
 
 .footer{
-    background:#020617;
-    padding-top:60px;
+    background-color: #000;
+    color: white;
+    padding-top: 50px;
 }
 
 .footer-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:40px;
-    padding:0 60px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+    minmax(220px,1fr));
+    gap: 40px;
+    padding: 0 5% 50px;
 }
 
 .footer-box h3{
-    margin-bottom:20px;
-    color:#93c5fd;
+    margin-bottom: 20px;
+    color: crimson;
 }
 
 .footer-box ul{
-    list-style:none;
+    list-style: none;
 }
 
 .footer-box li{
-    margin-bottom:10px;
+    margin-bottom: 12px;
 }
 
 .footer-box a{
-    text-decoration:none;
-    color:white;
-    transition:0.3s;
+    color: white;
 }
 
 .footer-box a:hover{
-    color:#60a5fa;
+    color: crimson;
 }
 
-.footer-box p{
-    margin-bottom:10px;
-}
+/* =========================
+   SOCIAL ICONS
+========================= */
 
 .social-icons{
-    display:flex;
-    gap:15px;
+    display: flex;
+    gap: 15px;
 }
 
 .social-icons a{
-    font-size:24px;
-    color:white;
-    transition:0.3s;
+    color: white;
+    font-size: 1.5rem;
+    transition: 0.3s ease;
 }
 
 .social-icons a:hover{
-    color:#60a5fa;
+    color: crimson;
+    transform: scale(1.2);
 }
 
 /* =========================
@@ -456,71 +507,96 @@ button:hover{
 ========================= */
 
 .copyright{
-    text-align:center;
-    padding:20px;
-    background:#000000;
-    font-size:14px;
-    color:#9ca3af;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #333;
+    font-size: 15px;
 }
 
 /* =========================
    RESPONSIVE DESIGN
 ========================= */
 
-@media(max-width:992px){
+@media(max-width: 992px){
 
-    .hero{
-        flex-direction:column;
-        text-align:center;
+    .hero h1{
+        font-size: 2.5rem;
     }
 
-    .contact-section{
-        grid-template-columns:1fr;
+    .hero h2{
+        font-size: 1.7rem;
     }
 
-    .about-section{
-        flex-direction:column;
-        text-align:center;
+    .about-image img{
+        width: 100%;
+        height: auto;
     }
+
 }
 
-@media(max-width:768px){
-
-    .header{
-        padding:20px;
-    }
+@media(max-width: 768px){
 
     .navbar{
-        flex-direction:column;
-        gap:20px;
+        flex-direction: column;
+        text-align: center;
     }
 
     .nav-links{
-        flex-direction:column;
-        text-align:center;
+        justify-content: center;
     }
 
     .hero{
-        padding:60px 20px;
+        padding: 80px 20px;
     }
 
-    .featured-products,
-    .products-section,
-    .about-section,
-    .contact-section,
-    .company-info{
-        padding:60px 20px;
+    .hero h1{
+        font-size: 2rem;
     }
 
-    .footer-container{
-        padding:0 20px 40px;
-    }
-
-    .hero-content h1{
-        font-size:38px;
+    .hero h2{
+        font-size: 1.5rem;
     }
 
     .page-title h1{
-        font-size:36px;
+        font-size: 2rem;
     }
+
+    .contact-section,
+    .about-section{
+        flex-direction: column;
+    }
+
+    .product-card img{
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+
 }
+
+@media(max-width: 480px){
+
+    .hero h1{
+        font-size: 1.7rem;
+    }
+
+    .hero h2{
+        font-size: 1.2rem;
+    }
+
+    .page-title h1{
+        font-size: 1.7rem;
+    }
+
+    .product-btn,
+    button{
+        width: 100%;
+        text-align: center;
+    }
+
+    .button-group{
+        flex-direction: column;
+    }
+
+}
+```
