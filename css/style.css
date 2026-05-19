@@ -69,8 +69,8 @@ a{
 ========================= */
 
 .logo img{
-    width: 180px;
-    height: 70px;
+    width: 210em;
+    height: 100em;
     object-fit: contain;
 }
 
