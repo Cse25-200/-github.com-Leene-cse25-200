@@ -1,51 +1,56 @@
+/* =========================
+   MOBILE MENU
+========================= */
 
+function toggleMenu(){
 
-// Website Loaded Message
-console.log("Arawaza website loaded successfully!");
+    const nav = document.querySelector(".nav-links");
 
-// Welcome Message
-window.onload = function () {
+    nav.classList.toggle("show");
+}
 
-    alert("Welcome to Arawaza Martial Arts Equipment!");
+/* =========================
+   FEEDBACK FORM VALIDATION
+========================= */
 
-};
+function validateForm(){
 
-// Button Hover Animation
-const buttons = document.querySelectorAll("button, .product-btn");
+    let name = document.getElementById("name").value;
 
-buttons.forEach(function(button){
+    let email = document.getElementById("email").value;
 
-    button.addEventListener("mouseover", function(){
+    let comments = document.getElementById("comments").value;
 
-        button.style.transform = "scale(1.05)";
+    /* EMPTY FIELDS */
 
-    });
+    if(name === "" || email === "" || comments === ""){
 
-    button.addEventListener("mouseout", function(){
+        alert("Please fill in all required fields.");
 
-        button.style.transform = "scale(1)";
+        return false;
+    }
 
-    });
+    /* EMAIL CHECK */
 
-});
+    if(!email.includes("@")){
 
-// Product Card Hover Effect
-const cards = document.querySelectorAll(".product-card");
+        alert("Please enter a valid email address.");
 
-cards.forEach(function(card){
+        return false;
+    }
 
-    card.addEventListener("mouseover", function(){
+    /* COMMENT LENGTH */
 
-        card.style.boxShadow =
-        "0 10px 20px rgba(0,0,0,0.3)";
+    if(comments.length < 10){
 
-    });
+        alert("Comments are too short.");
 
-    card.addEventListener("mouseout", function(){
+        return false;
+    }
 
-        card.style.boxShadow =
-        "0 4px 10px rgba(0,0,0,0.1)";
+    /* SUCCESS MESSAGE */
 
-    });
+    alert("Thank you for your feedback!");
 
-});
+    return true;
+}
