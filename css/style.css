@@ -262,7 +262,7 @@ button:hover{
     gap: 40px;
     padding: 60px 5%;
     flex-wrap: wrap;
-    background-color: white;
+    background-color:#555;
 }
 
 .about-image img{
