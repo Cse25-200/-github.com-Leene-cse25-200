@@ -262,13 +262,14 @@ button:hover{
     gap: 40px;
     padding: 60px 5%;
     flex-wrap: wrap;
-    background-color:lightgray;
+    background-color:white;
 }
 
 .about-image img{
     width: 500px;
     height: 500px;
     border-radius: 10px;
+     background-color:lightgray;
 }
 
 .about-content{
